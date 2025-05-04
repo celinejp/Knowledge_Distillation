@@ -1,12 +1,12 @@
 # Knowledge Distillation for Sentiment Classification (IMDb)
 
-## 📌 Project Overview
+## Project Overview
 
-This project demonstrates the process of compressing a large pretrained model into a smaller student model using **knowledge distillation**. The task is binary sentiment classification on the IMDb movie reviews dataset. The goal is to train a student model that approximates the teacher model's performance while being faster and more efficient.
+This project demonstrates a teacher–student network for a binary sentiment classification task on the IMDb movie reviews dataset. The teacher model will be a pretrained transformer (such as BERT), and the student model is a smaller or simpler model that learns from the teacher’s outputs.
 
 ---
 
-## ▶️ How to Run
+## How to Run
 
 1. Open the notebook in Google Colab or Jupyter.
 2. Ensure `IMDB Dataset.csv` is available in the environment.
@@ -14,7 +14,7 @@ This project demonstrates the process of compressing a large pretrained model in
 
 ---
 
-## 🧩 Steps Included in the Project
+## Steps Included in the Project
 
 1. **Dataset Preparation**: IMDb CSV loaded, labeled, shuffled, and split into train/val/test sets.
 2. **Tokenization**: Using BERT tokenizer, with results cached.
@@ -26,14 +26,14 @@ This project demonstrates the process of compressing a large pretrained model in
 
 ---
 
-## 🧠 Models Used
+## Models Used
 
 * **Teacher Model**: `BertForSequenceClassification` (BERT-base, uncased)
 * **Student Model**: Custom DistilBERT-based classifier with dropout and linear head
 
 ---
 
-## 💾 Checkpoints and Resume-ability
+## Checkpoints and Resume-ability
 
 * All data splits, encodings, and model outputs are cached in the `checkpoints/` directory.
 * If kernel/session crashes, rerun will load from cache.
@@ -48,7 +48,7 @@ This project demonstrates the process of compressing a large pretrained model in
 
 ---
 
-## 📊 Final Results
+## Final Results
 
 | Model   | Accuracy | F1 Score | AUC    |
 | ------- | -------- | -------- | ------ |
